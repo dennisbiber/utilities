@@ -1,3 +1,7 @@
+# Block Mine script is intended to measure how long it would take to validate a bitcoin.
+# Can be refactored into script to hash out bitcoin and bitcoin based cryptocurrency
+
+
 import hashlib
 import json
 import numpy as np
@@ -13,13 +17,15 @@ class CreateBlock(object):
 
     def __init__(self):
         super(CreateBlock, self).__init__()
+        # Initialize the msg
         self.msg = ""
 
     def buildMsg(self, user, recipient, msgInput, tCount):
         stackedMsg = ""
         encrypted_user = self.getEncrypt(user)
         encrypted_recipient = self.getEncrypt(recipient)
-
+        # make a sample block with one user making a transaction.
+        # then trys to encrypt the block with sha256 encryption algorithm
         msg = f"input: {msgInput}, user: {encrypted_user}, recipient: {encrypted_recipient}, blockId: 000000001000"
         stackedMsg = f"msg{tCount}: " + msg
         self.msg = "\n" + stackedMsg
