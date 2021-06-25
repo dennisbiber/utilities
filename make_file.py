@@ -2,11 +2,9 @@ import click
 import os.path
 import stat
 
-import av.path
+from templates import template_string
 
-from av.template import template_string
-
-__author__ == "Dennis BIber"
+__author__ = "Dennis BIber"
 
 
 # Determine path to our template
@@ -27,9 +25,6 @@ def build_template_context(full_path, date, user_info, username, **kwargs):
     else:
         rel_path = os.path.relpath(full_path, kwargs['source_dir'])
 
-    # Come up with the relative path string that can be used to find the
-    # root of our repo.  This is used so that our tools template can include
-    # code to the source/python on the python path.
     file_depth = len(rel_path.split(os.sep)) - 1
 
     python_rel_args = ''
@@ -78,7 +73,7 @@ def gen_file(template_path, full_path, force=False, quiet=False, executable=Fals
     if not force and os.path.exists(full_path):
         error_string = '"%s" already exists' % full_path
         if no_exception:
-            print "Error: %s. Creating other files..." % error_string
+            print("Error: %s. Creating other files..." % error_string)
             return
         else:
             raise click.UsageError(error_string)
