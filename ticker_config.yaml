@@ -1,0 +1,39 @@
+---
+stock_config: {
+  apple: {
+    ticker_symbol: "aapl",
+    short_search: 5,
+    full_search: 20,
+  },
+  kroger: {
+    ticker_symbol: "kr",
+    short_search: 5,
+    full_search: 20
+  },
+  marketaxes: {
+    ticker_symbol: "mktx",
+    short_search: 5,
+    full_search: 20
+  },
+  nintendo: {
+    ticker_symbol: "NTDOY",
+    short_search: 5,
+    full_search: 20,
+  },
+  ishares: {
+    ticker_symbol: "IHE",
+    short_search: 5,
+    full_search: 20,
+  },
+  uber: {
+    ticker_symbol: "UBER",
+    short_search: 5,
+    full_search: 20,
+  },
+  alf: {
+    ticker_symbol: "ALF",
+    short_search: 5,
+    full_search: 20,
+  }
+
+}
